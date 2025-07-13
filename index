@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تهنئة ختم القرآن</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to bottom, #f2f2f2, #dbe9d8);
+      color: #2e2e2e;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .centered {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 600px;
+      margin: 50px auto;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1em;
+      width: 250px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 25px;
+      background-color: #2d8659;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #246b4b;
+    }
+
+    .duaa {
+      margin-top: 30px;
+      display: none;
+      font-weight: bold;
+      color: #006633;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    .signature {
+      font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+      color: #000;
+      font-size: 2em;
+      margin-top: 40px;
+    }
+
+    .password-box {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 400px;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شاشة كلمة المرور -->
+  <div id="passwordScreen">
+    <div class="password-box centered">
+      <h2>من فضلك أدخل كلمة المرور الصفحه التاليه</h2>
+      <input type="password" id="passwordInput" placeholder="كلمة المرور">
+      <br>
+      <button onclick="checkPassword()">دخول</button>
+      <div id="errorMsg" class="error"></div>
+      <p class="signature">𝒜ℳ</p>
+    </div>
+  </div>
+
+  <!-- المحتوى الرئيسي بعد الدخول -->
+  <div id="mainContent" class="hidden">
+    <div class="card">
+      <h1>مبارك يا زوجتي الحبيبة 💖</h1>
+      <p>الحمد لله الذي وفقنا لختم كتابه الكريم سويًا.</p>
+      <p>أسأل الله أن يجعل القرآن نورًا في دربنا، ورفيقًا في حياتنا، وشفاعةً لنا يوم نلقاه.</p>
+      <button onclick="showDuaa()">اضغطي هنا للدعاء</button>
+      <p class="duaa" id="duaa">اللهم اجعلنا من أهل القرآن، الذين هم أهلك وخاصتك، واجعل القرآن ربيع قلوبنا ونور صدورنا.</p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value.trim();
+      const allowed = ["aya2001@", "Aya2001@"];
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (allowed.includes(input)) {
+        document.getElementById('passwordScreen').style.display = 'none';
+        document.getElementById('mainContent').classList.remove('hidden');
+      } else {
+        errorMsg.textContent = "برجاء المحاولة ثانية.";
+      }
+    }
+
+    function showDuaa() {
+      document.getElementById('duaa').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
