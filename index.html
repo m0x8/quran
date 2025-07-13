@@ -126,9 +126,17 @@
       <h1>مبارك يا زوجتي الحبيبة 💖</h1>
       <p>الحمد لله الذي وفقنا لختم كتابه الكريم سويًا.</p>
       <p>أسأل الله أن يجعل القرآن نورًا في دربنا، ورفيقًا في حياتنا، وشفاعةً لنا يوم نلقاه.</p>
-      <button onclick="showDuaa()">اضغطي عليا هنا بس مش اوي</button>
-      <p class="duaa" id="duaa">💖أطال االله في عمرك ي عمري وجعلكي خير المعين لكي وجعلني خير المعين لكي ي زوجتي الحبية انتي</p>
-<p class="signature">𝒜ℳ</p>
+      <p>اللهم اجعل القرآن العظيم لقلوبنا ضياءً،
+ولأبصارنا جلاءً، ولأسقامنا دواءً،
+ولذنوبنا ممحِّصاً، وعن النيران مخلِّصاً.
+اللهم اجعله شفيعاً لنا، وحجة لنا لا حجة علينا.</p>
+      <button onclick="showDuaa()">اضغطي عليا بس مش اوي</button>
+
+      <p class="duaa" id="step1" style="display:none;">اي اي اي ما براحة ي ست انتي 😅</p>
+      <p class="duaa" id="step2" style="display:none;">خلاص خلاص سامحتك ❤️</p>
+      <p class="duaa" id="final" style="display:none;">أطال الله في عمرك ي عمري وجعلني خير المعين لكي وجعلكي خير المعين لي ي زوجتي الحبية انتي 💖</p>
+
+      <p class="signature">𝒜ℳ</p>
     </div>
   </div>
 
@@ -147,7 +155,23 @@
     }
 
     function showDuaa() {
-      document.getElementById('duaa').style.display = 'block';
+      // Reset visibility
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('final').style.display = 'none';
+
+      // Show messages in steps
+      setTimeout(() => {
+        document.getElementById('step1').style.display = 'block';
+      }, 0);
+
+      setTimeout(() => {
+        document.getElementById('step2').style.display = 'block';
+      }, 2000);
+
+      setTimeout(() => {
+        document.getElementById('final').style.display = 'block';
+      }, 3500);
     }
   </script>
 
