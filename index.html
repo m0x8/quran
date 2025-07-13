@@ -3,43 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <title>تهنئة ختم القرآن</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Tajawal', sans-serif;
       background: linear-gradient(to bottom, #f2f2f2, #dbe9d8);
       color: #2e2e2e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
     }
 
     .hidden {
       display: none;
     }
 
-    .centered {
-      text-align: center;
-      padding: 50px;
+    .container {
+      width: 100%;
+      max-width: 700px;
+      padding: 20px;
     }
 
-    .card {
+    .card, .password-box {
       background-color: #ffffff;
       border-radius: 20px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       padding: 30px;
-      max-width: 600px;
-      margin: 50px auto;
+      width: 100%;
+    }
+
+    h1, h2, p {
+      margin: 15px 0;
     }
 
     input[type="password"] {
       padding: 10px;
       font-size: 1em;
-      width: 250px;
-      margin: 10px 0;
+      width: 80%;
+      max-width: 300px;
+      margin-top: 10px;
       border: 1px solid #ccc;
       border-radius: 10px;
       text-align: center;
     }
 
     button {
+      margin-top: 15px;
       padding: 10px 25px;
       background-color: #2d8659;
       color: white;
@@ -59,6 +76,7 @@
       display: none;
       font-weight: bold;
       color: #006633;
+      font-size: 1.2em;
     }
 
     .error {
@@ -73,22 +91,27 @@
       margin-top: 40px;
     }
 
-    .password-box {
-      background-color: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      padding: 30px;
-      max-width: 400px;
-      margin: 100px auto;
+    @media screen and (max-width: 600px) {
+      .card, .password-box {
+        padding: 20px 15px;
+      }
+
+      .signature {
+        font-size: 1.5em;
+      }
+
+      .duaa {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- شاشة كلمة المرور -->
-  <div id="passwordScreen">
-    <div class="password-box centered">
-      <h2>من فضلك أدخل كلمة المرور الصفحه التاليه</h2>
+  <div id="passwordScreen" class="container">
+    <div class="password-box">
+      <h2>من فضلك أدخل كلمة المرور للانتقال</h2>
       <input type="password" id="passwordInput" placeholder="كلمة المرور">
       <br>
       <button onclick="checkPassword()">دخول</button>
@@ -98,13 +121,14 @@
   </div>
 
   <!-- المحتوى الرئيسي بعد الدخول -->
-  <div id="mainContent" class="hidden">
+  <div id="mainContent" class="container hidden">
     <div class="card">
       <h1>مبارك يا زوجتي الحبيبة 💖</h1>
       <p>الحمد لله الذي وفقنا لختم كتابه الكريم سويًا.</p>
       <p>أسأل الله أن يجعل القرآن نورًا في دربنا، ورفيقًا في حياتنا، وشفاعةً لنا يوم نلقاه.</p>
-      <button onclick="showDuaa()">اضغطي هنا للدعاء</button>
-      <p class="duaa" id="duaa">اللهم اجعلنا من أهل القرآن، الذين هم أهلك وخاصتك، واجعل القرآن ربيع قلوبنا ونور صدورنا.</p>
+      <button onclick="showDuaa()">اضغطي عليا هنا بس مش اوي</button>
+      <p class="duaa" id="duaa">💖أطال االله في عمرك ي عمري وجعلكي خير المعين لكي وجعلني خير المعين لكي ي زوجتي الحبية انتي</p>
+<p class="signature">𝒜ℳ</p>
     </div>
   </div>
 
